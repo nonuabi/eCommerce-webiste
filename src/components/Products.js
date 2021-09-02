@@ -33,7 +33,7 @@ const Products = ({
   // TO LOAD DATA WHEN THE PRODUCT PAGE IS RENDERED
   useEffect(() => {
     fetchPost();
-  }, [postData.sort]);
+  }, [postData.sort, fetchPost]);
   // HANDLE THE PENCILE BUTTON CLICK
   const changeEditMode = (product_id) => {
     setInEdit({

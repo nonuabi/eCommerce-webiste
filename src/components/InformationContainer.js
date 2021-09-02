@@ -11,14 +11,14 @@ const InformationContainer = ({ product_info, addToCart }) => {
       (post) => post.id === product_info.product_info_id
     );
     setItem(temp);
-  }, []);
+  }, [product_info]);
 
   return (
     <div>
       {/* MAPPING OVER THE ITME STATE ARRAY  */}
-      {item.map((info) => {
+      {item.map((info, index) => {
         return (
-          <>
+          <div key={index}>
             <h2>Detailed Information</h2>
             <div className="card" key={info.id}>
               <div className="card-body">
@@ -35,7 +35,7 @@ const InformationContainer = ({ product_info, addToCart }) => {
                 <button onClick={() => addToCart(info.id)}>Add To Cart</button>
               </div>
             </div>
-          </>
+          </div>
         );
       })}
     </div>
